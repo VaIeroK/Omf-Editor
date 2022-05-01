@@ -1,0 +1,9 @@
+.obj
+obj det_reload
+amm Left, rfc ("lock_time_end_anm_reload_detector")(gats[-0.25])
+amm Right, rfc ("lock_time_start_anm_reload_detector")(gats[/2.0])
+amm Left2, gats[-0.2]
+.obj
+obj reload_full
+amm Left, rfc ("lock_time_end_anm_reload_empty")(gats[-0.25])
+amm Right, rfc ("lock_time_start_anm_reload")(gats[/2.0])
