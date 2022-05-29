@@ -97,7 +97,7 @@ namespace OMF_Editor
             this.chbxAskForOverwrite = new System.Windows.Forms.CheckBox();
             this.chbxRealTimeLength = new System.Windows.Forms.CheckBox();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
-            this.comandsHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showBonePartsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupMotionParams.SuspendLayout();
             this.groupMotionTimeFormat.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -471,7 +471,8 @@ namespace OMF_Editor
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.toolsToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.showBonePartsToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
@@ -552,8 +553,7 @@ namespace OMF_Editor
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openSourceCodeToolStripMenuItem,
-            this.comandsHelpToolStripMenuItem});
+            this.openSourceCodeToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             // 
@@ -609,11 +609,11 @@ namespace OMF_Editor
             // 
             this.saveFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog2_FileOk);
             // 
-            // comandsHelpToolStripMenuItem
+            // showBonePartsToolStripMenuItem
             // 
-            this.comandsHelpToolStripMenuItem.Name = "comandsHelpToolStripMenuItem";
-            resources.ApplyResources(this.comandsHelpToolStripMenuItem, "comandsHelpToolStripMenuItem");
-            this.comandsHelpToolStripMenuItem.Click += new System.EventHandler(this.comandsHelpToolStripMenuItem_Click);
+            this.showBonePartsToolStripMenuItem.Name = "showBonePartsToolStripMenuItem";
+            resources.ApplyResources(this.showBonePartsToolStripMenuItem, "showBonePartsToolStripMenuItem");
+            this.showBonePartsToolStripMenuItem.Click += new System.EventHandler(this.showBonePartsToolStripMenuItem_Click);
             // 
             // OMF_Editor
             // 
@@ -718,7 +718,7 @@ namespace OMF_Editor
         private System.Windows.Forms.CheckBox chbxAskForOverwrite;
         private System.Windows.Forms.ToolStripMenuItem saveAsSelectedToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog2;
-        private System.Windows.Forms.ToolStripMenuItem comandsHelpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showBonePartsToolStripMenuItem;
     }
 }
 

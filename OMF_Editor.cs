@@ -75,6 +75,7 @@ namespace OMF_Editor
             saveAsToolStripMenuItem.Enabled = false;
             saveToolStripMenuItem.Enabled = false;
             toolsToolStripMenuItem.Enabled = false;
+            showBonePartsToolStripMenuItem.Enabled = false;
 
             openFileDialog1.Filter = "OMF file|*.omf";
             saveFileDialog1.Filter = saveFileDialog2.Filter = "OMF file|*.omf|Skls file|*.skls|Skl file|*.skl";
@@ -117,6 +118,7 @@ namespace OMF_Editor
                 saveAsToolStripMenuItem.Enabled = true;
                 saveToolStripMenuItem.Enabled = true;
                 toolsToolStripMenuItem.Enabled = true;
+                showBonePartsToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -1029,14 +1031,13 @@ namespace OMF_Editor
             }
         }
 
-        private void comandsHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        private void showBonePartsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "- Real time length: Changes motion length and motion marks interval with motion speed \n" +
-                "- Ask for overwrite: Asks to overwrite the animation in case of a name conflict when merging omf's \n" +
-                "- Tools->Try Repair: Repairs and saves Gunslinger animations \n" + 
-                "- Tools->Swap Anim Marks: Swap all motion marks from current omf to opened \n"
-                , "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (Main_OMF != null)
+            {
+                BonePartsWindow window = new BonePartsWindow(Main_OMF.bone_cont.parts);
+                window.ShowDialog();
+            }
         }
     }
 }

@@ -75,6 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BonePartsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BonePartsWindow.designer.cs">
+      <DependentUpon>BonePartsWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Common.cs" />
     <Compile Include="Editor.cs" />
     <Compile Include="OMF_Editor.cs">
@@ -98,6 +104,9 @@
     </Compile>
     <Compile Include="OMF.cs" />
     <Compile Include="Program.cs" />
+    <EmbeddedResource Include="BonePartsWindow.resx">
+      <DependentUpon>BonePartsWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OMF_Editor.resx">
       <DependentUpon>OMF_Editor.cs</DependentUpon>
       <SubType>Designer</SubType>
