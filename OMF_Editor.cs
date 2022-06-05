@@ -80,7 +80,7 @@ namespace OMF_Editor
             openFileDialog1.Filter = "OMF file|*.omf";
             saveFileDialog1.Filter = saveFileDialog2.Filter = "OMF file|*.omf|Skls file|*.skls|Skl file|*.skl";
 
-            this.Text = "OMF editor 1.0.9 [modified version]";
+            this.Text = "OMF editor 1.1 [modified version]";
 
             cloneToolStripMenuItem.Enabled = false;
 
