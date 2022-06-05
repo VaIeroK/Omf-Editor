@@ -104,6 +104,10 @@
     </Compile>
     <Compile Include="OMF.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="RenameBones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenameBones.Designer.cs" />
     <EmbeddedResource Include="BonePartsWindow.resx">
       <DependentUpon>BonePartsWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +136,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RenameBones.resx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

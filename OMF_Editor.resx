@@ -1578,6 +1578,42 @@
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>File</value>
   </data>
+  <data name="mergeWithToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="mergeWithToolStripMenuItem.Text" xml:space="preserve">
+    <value>Merge with...</value>
+  </data>
+  <data name="addAnimsFromToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="addAnimsFromToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add anims from</value>
+  </data>
+  <data name="tryRepairToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tryRepairToolStripMenuItem.Text" xml:space="preserve">
+    <value>Try Repair</value>
+  </data>
+  <data name="swapAnimsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="swapAnimsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Swap anim marks</value>
+  </data>
+  <data name="renameBonesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="renameBonesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rename bones</value>
+  </data>
+  <data name="showBonePartsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="showBonePartsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Show bone parts</value>
+  </data>
   <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 20</value>
   </data>
@@ -1589,12 +1625,6 @@
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>Help</value>
-  </data>
-  <data name="showBonePartsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 20</value>
-  </data>
-  <data name="showBonePartsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Show Bone Parts</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -1647,32 +1677,8 @@
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="mergeWithToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 22</value>
-  </data>
-  <data name="mergeWithToolStripMenuItem.Text" xml:space="preserve">
-    <value>Merge with...</value>
-  </data>
-  <data name="addAnimsFromToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 22</value>
-  </data>
-  <data name="addAnimsFromToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add anims from</value>
-  </data>
-  <data name="tryRepairToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 22</value>
-  </data>
-  <data name="tryRepairToolStripMenuItem.Text" xml:space="preserve">
-    <value>Try Repair</value>
-  </data>
-  <data name="swapAnimsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 22</value>
-  </data>
-  <data name="swapAnimsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Swap anim marks</value>
-  </data>
   <data name="openSourceCodeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="openSourceCodeToolStripMenuItem.Text" xml:space="preserve">
     <value>Open Source Code</value>
@@ -1997,6 +2003,12 @@
   </data>
   <data name="&gt;&gt;saveFileDialog2.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;renameBonesToolStripMenuItem.Name" xml:space="preserve">
+    <value>renameBonesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;renameBonesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;showBonePartsToolStripMenuItem.Name" xml:space="preserve">
     <value>showBonePartsToolStripMenuItem</value>

@@ -1039,5 +1039,14 @@ namespace OMF_Editor
                 window.ShowDialog();
             }
         }
+
+        private void renameBonesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Main_OMF != null)
+            {
+                RenameBones window = new RenameBones(Main_OMF.bone_cont);
+                window.ShowDialog();
+            }
+        }
     }
 }
