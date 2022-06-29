@@ -24,7 +24,7 @@ namespace OMF_Editor
         public void RecalcSectionSize()
         {
             uint new_size = 0;
-            foreach(AnimVector anim in Anims)
+            foreach (AnimVector anim in Anims)
             {
                 anim.RecalcSectionSize();
                 new_size += anim.GetSize();
@@ -33,16 +33,43 @@ namespace OMF_Editor
             SectionSize = new_size;
 
             // Recalc second section size
-            new_size = 6; // motions count ( short )
+            new_size = 4;
+
+            new_size += (uint)bone_cont.Size();
+
+            new_size += 2;
 
             foreach (AnimationParams anim in AnimsParams)
             {
-                uint temp = (uint)anim.Size(bone_cont.OGF_V);
+                new_size += (uint)anim.Name.Length + 1;
+                new_size += 4;
+                new_size += 2;
+                new_size += 2;
+                new_size += 4;
+                new_size += 4;
+                new_size += 4;
+                new_size += 4;
 
-                new_size += temp;
+                if (bone_cont.OGF_V >= 4)
+                {
+                    new_size += 4;
+
+                    if (anim.m_marks != null && anim.m_marks.Count > 0)
+                    {
+                        foreach (MotionMark mark in anim.m_marks)
+                        {
+                            new_size += (uint)mark.Name.Length + 1;
+                            new_size += 4;
+
+                            foreach (MotionMarkParams param in mark.m_params)
+                            {
+                                new_size += 4;
+                                new_size += 4;
+                            }
+                        }
+                    }
+                }
             }
-
-            new_size += (uint)bone_cont.Size();
 
             bone_cont.SectionSize = new_size;
         }
@@ -224,9 +251,16 @@ namespace OMF_Editor
         public int Size()
         {
             int new_size = 0;
-            foreach(BoneParts bonesparts in parts)
+            foreach (BoneParts bonesparts in parts)
             {
-                new_size += bonesparts.Size();
+                new_size += bonesparts.Name.Length + 1;
+                new_size += 2;
+
+                foreach (BoneVector bone in bonesparts.bones)
+                {
+                    new_size += bone.Name.Length + 1;
+                    new_size += 4;
+                }
             }
 
             return new_size;
@@ -308,13 +342,6 @@ namespace OMF_Editor
             }
         }
 
-        public uint Size()
-        {
-            uint temp = (uint)(Name.Length + 8 * m_params.Count + 6);
-
-            return temp;
-        }
-
         public void WriteMotionMark(BinaryWriter writer, OMFEditor editor)
         {
             editor.WriteMarkString(writer, Name);
@@ -357,28 +384,6 @@ namespace OMF_Editor
         public float Accrue { get; set; }
         public float Falloff { get; set; }
         public int MarksCount { get; set; }
-
-        public uint Size(short motion_version)
-        {
-            uint new_size = 0;
-
-            if(motion_version == 4)
-            {
-                new_size += 4;
-
-                if (m_marks != null && m_marks.Count > 0)
-                {
-                    foreach (MotionMark mark in m_marks)
-                    {
-                        uint temp = mark.Size();
-                        new_size += temp;
-                    }    
-                        
-                }
-            }
-            
-            return new_size + (uint)(Name.Length + 25);
-        }
 
         public List<MotionMark> m_marks; // = new List<MotionMark>();
 

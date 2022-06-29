@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using System.Text;
 
 namespace OMF_Editor
 {
@@ -229,57 +230,58 @@ namespace OMF_Editor
         {
             string str = "";
 
-            while (true)
+            while (reader.BaseStream.Position < reader.BaseStream.Length)
             {
-                byte b;
-
-                b = reader.ReadByte();
-
-                if (b == 0)
+                byte[] one = { reader.ReadByte() };
+                if (one[0] != 0)
                 {
-                    return str;
+                    str += Encoding.Default.GetString(one);
                 }
                 else
                 {
-                    str += Convert.ToChar(b).ToString();
+                    break;
                 }
             }
+            return str;
         }
 
         public string ReadMotionMarkString(BinaryReader reader)
         {
             string str = "";
 
-            while (true)
+            while (reader.BaseStream.Position < reader.BaseStream.Length)
             {
-                byte b = reader.ReadByte();
-
-                if (b == 10 || b == 13)
+                byte[] one = { reader.ReadByte() };
+                if (one[0] != 0xA)
                 {
-                    if (b == 13) reader.ReadByte();
-                    return str;
+                    str += Encoding.Default.GetString(one);
                 }
                 else
                 {
-                    str += Convert.ToChar(b).ToString();
+                    break;
                 }
             }
+            return str;
         }
 
         public void WriteSuperString(BinaryWriter writer, string text)
         {
-            char[] temp = text.ToCharArray();
-            byte[] array = Array.ConvertAll(temp, q => Convert.ToByte(q));
+            List<byte> temp = new List<byte>();
 
-            writer.Write(array);
-            writer.Write((byte)0);
+            temp.AddRange(Encoding.Default.GetBytes(text));
+            temp.Add(0);
+
+            writer.Write(temp.ToArray());
         }
 
         public void WriteMarkString(BinaryWriter writer, string text)
         {
-            writer.Write(text.ToCharArray());
-            writer.Write((byte)0x0D);
-            writer.Write((byte)0x0A);
+            List<byte> temp = new List<byte>();
+
+            temp.AddRange(Encoding.Default.GetBytes(text));
+            temp.Add((byte)0xA);
+
+            writer.Write(temp.ToArray());
         }
     }
 }

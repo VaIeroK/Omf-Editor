@@ -466,7 +466,7 @@ namespace OMF_Editor
             }
             else
             {
-                if (current.Text[current.Text.Length - 1] != '.')
+                if (current.Text.Length > 0 && current.Text[current.Text.Length - 1] != '.')
                     MotionParamsUpdate(true);
             }
 
